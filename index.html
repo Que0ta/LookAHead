@@ -86,6 +86,31 @@
         </div>
       </div>
     </section>
+
+    <div class="contact-form py-4">
+      <h2> Форма зв'язку </h2>
+      <form>
+        <div class="form-floating mb-2">
+          <input type="email" class="form-control" id="floatingInput" placeholder="Ваше ім'я">
+          <label for="floatingInput">Ваше ім'я</label>
+        </div>
+        <div class="form-floating mb-2">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Telegram або номер телефону">
+          <label for="floatingPassword">Telegram або номер телефону</label>
+        </div>
+
+        <select name="level" id="level-select" class="form-select mb-2" required>
+          <option selected>--Виберіть ваш час складання--</option>
+          <option value="new">Початківець</option>
+          <option value="beginner">Менше 2хв</option>
+          <option value="cat">Менше 1хв</option>
+          <option value="cat">Менше 40секунд</option>
+        </select>
+        <button class="submit mx-auto " type="submit"> Відправити </button>
+      </form>
+    </div>
+
+    <!-- <a href="https://www.vecteezy.com/free-videos/3d-rendering">3d Rendering Stock Videos by Vecteezy</a> -->
   </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
