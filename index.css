@@ -1,9 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;600&display=swap');
+
+:root {
+  --accent: #e8ff3b;
+  --accent-dim: rgba(232, 255, 59, 0.15);
+  --white: #ffffff;
+  --dark: #0a0a0a;
+  --card-bg: rgba(255, 255, 255, 0.07);
+  --card-border: rgba(255, 255, 255, 0.12);
+}
+
+
 .navbar-toggler-icon{
     filter: invert(1);
 
 }
 
-/* Toggler sizing */
 .navbar-toggler {
   width: 40px;
   height: 34px;
@@ -16,7 +28,6 @@
   position: relative;
 }
 
-/* Each bar */
 .toggler-bar {
   display: block;
   width: 24px;
@@ -39,4 +50,177 @@
 
 .navbar-toggler[aria-expanded="true"] .bot {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+/* hero section */
+/*  */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* ─── Video BG ─── */
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(10, 10, 10, 0.82) 0%,
+    rgba(10, 10, 10, 0.55) 50%,
+    rgba(10, 10, 10, 0.25) 100%
+  );
+  z-index: 1;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  line-height: 0.95;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+
+.hero__title em {
+  font-style: normal;
+  color: var(--accent);
+  -webkit-text-stroke: 0px;
+}
+
+.hero__sub {
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.hero__btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: all 0.25s linear;
+}
+
+.hero__btn--primary {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+.hero__btn--primary:hover {
+  background: #fff;
+  color: var(--dark);
+  transform: translateY(-2px);
+}
+
+.hero__btn--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--white);
+  background: transparent;
+}
+
+.hero__btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ─── simple animation ─── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Adaptive: tablet ─── */
+@media (max-width: 768px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    padding: 7rem 1.5rem 3rem;
+    text-align: center;
+  }
+
+  .hero__eyebrow {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__overlay {
+    background: rgba(10, 10, 10, 0.65);
+  }
+}
+
+/* ─── Adaptive: small mobile ─── */
+@media (max-width: 400px) {
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .hero__btn {
+    width: 100%;
+    text-align: center;
+  }
 }
