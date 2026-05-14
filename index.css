@@ -1,0 +1,42 @@
+.navbar-toggler-icon{
+    filter: invert(1);
+
+}
+
+/* Toggler sizing */
+.navbar-toggler {
+  width: 40px;
+  height: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 4px;
+  position: relative;
+}
+
+/* Each bar */
+.toggler-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.3s linear, opacity 0.3s linear;
+  transform-origin: center;
+}
+
+/* Open state — Bootstrap sets aria-expanded="true" on the button */
+.navbar-toggler[aria-expanded="true"] .top {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .mid {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar-toggler[aria-expanded="true"] .bot {
+  transform: translateY(-7px) rotate(-45deg);
+}
