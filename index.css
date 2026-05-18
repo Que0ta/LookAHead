@@ -226,6 +226,7 @@
 }
 
 /* form */
+/*  */
 .contact-form{
   display: flex;
   justify-content: center;
@@ -254,4 +255,187 @@ form{
 .submit:hover{
   background-color: var(--accent_hover);
   transition: 0.5s;
+}
+
+/* Team */
+/*  */
+/* ─── Team Section ─── */
+.team-section {
+  padding: 5rem 0 4rem;
+  background: #fff;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.team-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.team-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: #111;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.team-sub {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  color: #888;
+  font-weight: 300;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ─── Desktop Grid ─── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 50px;
+}
+
+/* ─── Card ─── */
+.team-card {
+  border: 1px solid #ebebeb;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.team-card:hover {
+  box-shadow: 0 12px 36px rgba(0,0,0,0.10);
+  transform: translateY(-4px);
+}
+
+.team-card__photo {
+  background-color: var(--bg, #eee);
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.team-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.team-card__body {
+  padding: 1.1rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.team-card__name {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.team-card__role {
+  font-size: 0.78rem;
+  color: #888;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+}
+
+.team-card__bio {
+  font-size: 0.8rem;
+  color: #555;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+  line-height: 1.55;
+  margin: 0.2rem 0 0.4rem;
+}
+
+.team-card__socials {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.team-card__socials a {
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e8e8e8;
+  border-radius: 50%;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.team-card__socials a:hover {
+  color: #111;
+  border-color: #111;
+}
+
+/* ─── Mobile Swiper ─── */
+.team-swiper {
+  padding-bottom: 2.5rem !important;
+  overflow: visible;
+}
+
+.team-swiper .swiper-wrapper {
+  padding: 0.5rem 0 0.25rem;
+}
+
+.team-swiper .swiper-slide {
+  width: 78vw;
+  max-width: 300px;
+}
+
+.team-swiper-pagination {
+  bottom: 0 !important;
+}
+
+.team-swiper-pagination .swiper-pagination-bullet {
+  background: #111;
+  opacity: 0.2;
+  width: 6px;
+  height: 6px;
+}
+
+.team-swiper-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 20px;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.team-swiper {
+  overflow: hidden; /* prevents slides from bleeding outside */
+  width: 100%;
+}
+
+.swiper-slide {
+  height: auto; /* fixes stretched slide heights */
+}
+
+h2{
+  text-align: center;
+  margin: 25px 0;
 }

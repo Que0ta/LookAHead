@@ -11,6 +11,12 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
@@ -60,7 +66,7 @@
     <section class="hero">
       <!-- Video background -->
       <video class="hero__video" autoplay muted playsinline>
-        <source src="./assets/cubevid.mp4" type="video/mp4" />
+        <source src="./assets/cubevid.mp4#t=2" type="video/mp4" />
       </video>
 
       <!-- Dark overlay -->
@@ -88,26 +94,55 @@
     </section>
 
     <div class="contact-form py-4">
-      <h2> Форма зв'язку </h2>
+      <h2>Форма зв'язку</h2>
       <form>
         <div class="form-floating mb-2">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Ваше ім'я" required>
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Ваше ім'я"
+            required
+          />
           <label for="floatingInput">Ваше ім'я</label>
         </div>
         <div class="form-floating mb-2">
-          <input type="text" class="form-control" id="floatingNumber" placeholder="Telegram або номер телефону" required>
+          <input
+            type="text"
+            class="form-control"
+            id="floatingNumber"
+            placeholder="Telegram або номер телефону"
+            required
+          />
           <label for="floatingNumber">Telegram або номер телефону</label>
         </div>
 
-        <select name="level" id="level-select" class="form-select mb-2" required>
+        <select
+          name="level"
+          id="level-select"
+          class="form-select mb-2"
+          required
+        >
           <option selected>--Виберіть ваш час складання--</option>
           <option value="new">Початківець</option>
           <option value="beginner">Менше 2хв</option>
           <option value="cat">Менше 1хв</option>
           <option value="cat">Менше 40секунд</option>
         </select>
-        <button class="submit mx-auto " type="submit"> Відправити </button>
+        <button class="submit mx-auto" type="submit">Відправити</button>
       </form>
+    </div>
+
+    <!-- Team members -->
+    <!-- Desktop -->
+
+    <h2>Наша команда</h2>
+    <div class="team-grid d-none d-md-grid" id="teamGrid"></div>
+
+    <!-- Mobile -->
+    <div class="d-md-none swiper team-swiper">
+      <div class="swiper-wrapper" id="teamSwiper"></div>
+      <div class="swiper-pagination team-swiper-pagination"></div>
     </div>
 
     <!-- <a href="https://www.vecteezy.com/free-videos/3d-rendering">3d Rendering Stock Videos by Vecteezy</a> -->
@@ -117,4 +152,6 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"
   ></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./main.js"></script>
 </html>
