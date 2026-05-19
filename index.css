@@ -88,8 +88,8 @@
 .hero__inner {
   position: relative;
   z-index: 2;
-  width: 100%;
-  max-width: 1200px;
+  width: 95%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 6rem 2rem 4rem;
   display: grid;
@@ -308,6 +308,8 @@ form{
 
 /* ─── Card ─── */
 .team-card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid #ebebeb;
   border-radius: 14px;
   overflow: hidden;
@@ -342,6 +344,7 @@ form{
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  flex: 1;
 }
 
 .team-card__name {
@@ -374,6 +377,7 @@ form{
   margin-top: 0.4rem;
   padding-top: 0.8rem;
   border-top: 1px solid #f0f0f0;
+  margin-top: auto;
 }
 
 .team-card__socials a {

@@ -3,40 +3,40 @@ form.style.display = "none";
 
 const trainers = [
   {
-    name: "Ім'я",
-    role: "Роль",
-    bio: "Опис члена команди",
-    photo:
-      "https://static.vecteezy.com/system/resources/thumbnails/048/216/761/small/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png",
-    bg: "#b8d4f0",
-    socials: { telegram: "#", wca: "#" },
-  },
-  {
-    name: "Ім'я",
-    role: "Роль",
-    bio: "Опис члена команди",
+    name: "Ждаміров Артем",
+    role: "Досвід 7+ років",
+    bio: "Швидкубер, який займає 3 місце в Україні зі складання 3х3 однією рукою та знає як досягнути найкращий результат. ",
     photo:
       "https://static.vecteezy.com/system/resources/thumbnails/048/216/761/small/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png",
     bg: "#f0c4b8",
-    socials: { telegram: "#", wca: "#" },
+    socials: { wca: "https://www.worldcubeassociation.org/persons/2022ZHDA01" },
   },
   {
-    name: "Ім'я",
-    role: "Роль",
-    bio: "Опис члена команди",
+    name: "Мухін Олексій",
+    role: "Досвід 6+ років",
+    bio: "Швидкубер універсал, який навчить стабільних технік для складання різних видів головоломок.",
+    photo:
+      "https://static.vecteezy.com/system/resources/thumbnails/048/216/761/small/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png",
+    bg: "#b8d4f0",
+    socials: { wca: "https://www.worldcubeassociation.org/persons/2021MUKH02" },
+  },
+  {
+    name: "Христин Богдан",
+    role: "Досвід 4+ років",
+    bio: "Швидкубер який навчить послідовно опанувати найважливіші техніки складання.",
     photo:
       "https://static.vecteezy.com/system/resources/thumbnails/048/216/761/small/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png",
     bg: "#f0e0b0",
-    socials: { telegram: "#", wca: "#" },
+    socials: { wca: "https://www.worldcubeassociation.org/"},
   },
   {
-    name: "Ім'я",
-    role: "Роль",
-    bio: "Опис члена команди",
+    name: "Лемега Назарій",
+    role: "Досвід 3+ років",
+    bio: "Амбіційний швидкубер, який навчить впевнено рухатись до бажаного результату зі старту.",
     photo:
       "https://static.vecteezy.com/system/resources/thumbnails/048/216/761/small/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png",
     bg: "#d8b8f0",
-    socials: { telegram: "#", wca: "#" },
+    socials: { wca: "https://www.worldcubeassociation.org/persons/2023LEME01" },
   },
 ];
 
