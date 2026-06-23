@@ -27,7 +27,7 @@ const trainers = [
     photo:
       "https://static.vecteezy.com/system/resources/thumbnails/048/216/761/small/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png",
     bg: "#f0e0b0",
-    socials: { wca: "https://www.worldcubeassociation.org/"},
+    socials: { wca: "https://www.worldcubeassociation.org/" },
   },
   {
     name: "Лемега Назарій",
@@ -71,37 +71,43 @@ function cardTemplate({ name, role, bio, photo, bg, socials }) {
 const cards = trainers.map(cardTemplate).join("");
 
 form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const name = document.querySelector("#floatingInput").value;
-    const contact = document.querySelector("#floatingNumber").value;
-    const level = document.querySelector("#level-select").value;
+  const name = document.querySelector("#floatingInput").value;
+  const contact = document.querySelector("#floatingNumber").value;
+  const level = document.querySelector("#level-select").value;
 
-    try {
-        const res = await fetch("https://reportsapi-a7tx.onrender.com/ahead/sendMessage", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name,
-                contact,
-                level
-            })
-        });
+  try {
+    const message = `
+👤 Name: ${name}
+📞 Contact: ${contact}
+📊 Level: ${level}
+    `.trim();
 
-        const data = await res.json();
+    const res = await fetch(
+      "https://reportsapi-a7tx.onrender.com/ahead/sendMessage",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message,
+        }),
+      }
+    );
 
-        if (data.success) {
-            alert("Message sent successfully!");
-        } else {
-            alert("Something went wrong");
-        }
+    const data = await res.json();
 
-    } catch (err) {
-        console.error(err);
-        alert("Server error");
+    if (data.success) {
+      alert("Message sent successfully!");
+    } else {
+      alert("Something went wrong");
     }
+  } catch (err) {
+    console.error(err);
+    alert("Server error");
+  }
 });
 
 document.getElementById("teamGrid").innerHTML = cards;
