@@ -79,9 +79,9 @@ form.addEventListener("submit", async (e) => {
 
   try {
     const message = `
-👤 Name: ${name}
-📞 Contact: ${contact}
-📊 Level: ${level}
+👤 Ім'я: ${name}
+📞 Контакт: ${contact}
+📊 Рівень: ${level}
     `.trim();
 
     const res = await fetch(
@@ -98,15 +98,9 @@ form.addEventListener("submit", async (e) => {
     );
 
     const data = await res.json();
-
-    if (data.success) {
-      alert("Message sent successfully!");
-    } else {
-      alert("Something went wrong");
-    }
+    return
   } catch (err) {
     console.error(err);
-    alert("Server error");
   }
 });
 
