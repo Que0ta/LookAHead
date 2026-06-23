@@ -1,5 +1,5 @@
 const form = document.querySelector(".contact-form");
-form.style.display = "none";
+// form.style.display = "none";
 
 const trainers = [
   {
@@ -69,6 +69,40 @@ function cardTemplate({ name, role, bio, photo, bg, socials }) {
 }
 
 const cards = trainers.map(cardTemplate).join("");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.querySelector("#floatingInput").value;
+    const contact = document.querySelector("#floatingNumber").value;
+    const level = document.querySelector("#level-select").value;
+
+    try {
+        const res = await fetch("https://reportsapi-a7tx.onrender.com/ahead/sendMessage", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name,
+                contact,
+                level
+            })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+            alert("Message sent successfully!");
+        } else {
+            alert("Something went wrong");
+        }
+
+    } catch (err) {
+        console.error(err);
+        alert("Server error");
+    }
+});
 
 document.getElementById("teamGrid").innerHTML = cards;
 document.getElementById("teamSwiper").innerHTML = trainers
