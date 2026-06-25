@@ -68,6 +68,17 @@ function cardTemplate({ name, role, bio, photo, bg, socials }) {
   `;
 }
 
+function animatePopup(event){
+  const toast = document.querySelector("#toast");
+
+  toast.classList.add("show");
+
+  setTimeout(() => {
+      toast.classList.remove("show");
+  }, 3200);
+  event.target.reset();
+}
+
 const cards = trainers.map(cardTemplate).join("");
 
 form.addEventListener("submit", async (e) => {
@@ -79,9 +90,9 @@ form.addEventListener("submit", async (e) => {
 
   try {
     const message = `
-👤 Ім'я: ${name}
-📞 Контакт: ${contact}
-📊 Рівень: ${level}
+      👤 Ім'я: ${name}
+      📞 Контакт: ${contact}
+      📊 Рівень: ${level}
     `.trim();
 
     const res = await fetch(
@@ -98,26 +109,10 @@ form.addEventListener("submit", async (e) => {
     );
 
     const data = await res.json();
-
-    const toast = document.querySelector("#toast");
-
-    toast.classList.add("show");
-
-    setTimeout(() => {
-      toast.classList.remove("show");
-    }, 4000);
-    
-    form.reset();
+    animatePopup(e);
     return;
   } catch (err) {
-    
-    const toast = document.querySelector("#toast");
-
-    toast.classList.add("show");
-
-    setTimeout(() => {
-      toast.classList.remove("show");
-    }, 4000);
+    animatePopup(e);
     console.error(err);
   }
 });
