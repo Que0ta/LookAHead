@@ -98,8 +98,26 @@ form.addEventListener("submit", async (e) => {
     );
 
     const data = await res.json();
-    return
+
+    const toast = document.querySelector("#toast");
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 4000);
+    
+    form.reset();
+    return;
   } catch (err) {
+    
+    const toast = document.querySelector("#toast");
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 4000);
     console.error(err);
   }
 });
